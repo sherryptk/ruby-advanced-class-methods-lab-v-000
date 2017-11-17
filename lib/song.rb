@@ -44,7 +44,6 @@ class Song
 
   def self.create_from_filename(filename)
     song = self.new
-    split=[]
     artist, name=filename.split("-")
     song.artist_name=artist.chop
     song.name=namedelete(/.\.(.*)/)
