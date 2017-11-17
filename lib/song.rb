@@ -44,7 +44,7 @@ class Song
 
   def self.new_from_filename(filename)
     song = self.new
-    artist, name=filename.split("-")
+    artist, name=filename.split(" - ")
     song.artist_name=artist.chop
     song.name=name.delete(/\.(.*)/)
     return song
