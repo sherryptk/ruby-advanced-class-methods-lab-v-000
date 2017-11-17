@@ -49,4 +49,12 @@ class Song
     song.name=name.sub(/\.(.*)/,"")
     return song
   end
+
+  def self.create_from_filename(filename)
+    song = self.new
+    artist, name=filename.split(" - ")
+    song.artist_name=artist
+    song.name=name.sub(/\.(.*)/,"")
+    @@all<<song
+    return song
 end
