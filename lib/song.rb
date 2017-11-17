@@ -57,4 +57,5 @@ class Song
     song.name=name.sub(/\.(.*)/,"")
     @@all<<song
     return song
+  end
 end
