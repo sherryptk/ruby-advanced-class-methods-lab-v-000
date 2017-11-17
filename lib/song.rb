@@ -42,12 +42,12 @@ class Song
     self.all.sort! { |a, b|  a.name <=> b.name }
   end
 
-  def self.new_from_filename(filename)
+  def self.create_from_filename(filename)
     song = self.new
     split=[]
-    split=filename.split(" ")
-    @artist_name=filename[0]
-    @name = filename[1]
+    artist, name=filename.split("-")
+    song.artist_name=artist.chop
+    song.name=namedelete(/.\.(.*)/)
     return song
   end
 end
